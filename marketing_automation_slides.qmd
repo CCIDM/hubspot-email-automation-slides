@@ -1,0 +1,161 @@
+---
+title: "CCIDM Email Workflows: <span style='color: #b52b4c;'><br>Real-world process from proposal to insight</span>"
+author: "Jarrod Griffin"
+institute: "Cal Poly Pomona"
+date: "today"
+date-format: "M/D/YYYY"
+format:
+  revealjs:
+    center: false
+    logo: "logos/ccidm-cpp logo.png"
+    theme: [default, theme.scss]
+    slide-number: true
+    toc: true
+    toc-depth: 1
+    code-link: true
+    link-external-newwindow: true
+    #chalkboard: true #cannot use with self-contained
+    embed-resources: true
+    #multiplex: true
+    width: 1600
+    height: 900
+    margin: 0.1
+    minScale: 0.2
+    maxScale: 2.0
+    scrollable: true
+    incremental: true
+    html:
+      unsafe: true
+execute: 
+  freeze: auto
+---
+
+## Session Flow (60 minutes)
+1. Greetings & Introduction — **4 min** 
+2. Expected Learning Outcomes & Agenda — **1 min**
+3. Email Process for CCIDM — **20 min**
+4. Contact Information Email Automation with Qualtrics → HubSpot — **20 min**
+5. Q&A — **5 min**  
+6. End
+
+## Learning Outcomes
+
+By the end, students can:
+
+::: fragment
+1.  **Collaborate** with their boss to create a *publish‑ready* email to segments
+2.  **Send & interpret** an email via a CRM (**HubSpot**)
+3.  **Trigger** an **opt‑in confirmation** automatically from a contact info form(**Qualtrics**)
+:::
+
+
+## The CCIDM Email Process
+
+1) **Idea**  
+   - **Owner:** Worker or Boss  
+   - **Output:** One-line brief (objective, audience hypothesis)
+
+2) **Proposal Document**  
+   - **Action:** Copy the [“Email Proposal”](https://livecsupomona.sharepoint.com/:w:/r/sites/insights/Shared%20Documents/CCIDM_Files/1.%20Student%20Success%20Programs/1.%20CCIDM%20Internship%20Program/2.%20Internship%20Jobs%20by%20Positions/0-1.%20Digital%20Marketing%20Lead/7.%20Emails/MSDM%20Info%20Session%20Email%202025/MSDM%20Info%20Session%209-23%20Email.docx?d=w9584282595bf4631ab55f4fbb62b02c3&csf=1&web=1&e=57vz0r) template into the correct folder  
+   - **Fill:** Title · Content outline · Segment · Send window (date/time)  
+   - **Output:** Draft ready for approval
+
+3) **Approval to Send**  
+   - **Action:** Tag **Lead** for approval  
+   - **Gate:** Lead approves?  
+     - **No →** Revise proposal and re-request approval  
+     - **Yes →** Lock proposal (record approver + timestamp)
+
+## The CCIDM Email Process (cont'd)
+
+4) **Build in HubSpot**  
+   - **Action:** Use existing email template; set **from** name/email, legal footer, audience/segment, personalization tokens  
+   - **Output:** Test-ready campaign matching the approved proposal
+
+5) **QA & Send**  
+   - **Action:** Preview on desktop/mobile (dark mode if possible); test sends to QA list; fix rendering/copy/list issues  
+   - **Gate:** All checks pass?  
+     - **No →** Fix and re-test  
+     - **Yes →** **Send**
+
+6) **Measure & Learn**  
+   - **Wait:** Allow a reasonable window (e.g., 24–72h depending on volume)  
+   - **Review:** Delivery & **bounce rate**, **CTR/CTOR**, unsubscribes/spam, etc.)  
+   - **Actions:** Suppress **hard bounces**; log insights; propose next iteration
+
+::: callout-warning
+**Compliance & Hygiene** — Mail only contacts with valid marketing consent. If missing, trigger opt-in confirmation and record consent before sending.
+:::
+
+
+## Qualtrics → HubSpot Automation Workflow
+
+## See it in action
+
+- Submit a **Qualtrics** [survey on screen](https://cpp.az1.qualtrics.com/jfe/form/SV_6WpZLH4Mh2GDluS).
+- Show the **HubSpot** contact appearing.
+- Show the **confirmation email** arriving.
+
+## Problem & Success Criteria
+
+**Pain with manual steps**
+
+- Delays erode trust
+- errors corrupt CRM
+- inconsistent follow-up.
+
+**Success criteria for today**
+
+- ✅ **Upsert** contact by email (no duplicates)  
+- ✅ **Consent** captured (timestamp/text)  
+- ✅ **Instant confirmation** sent
+
+## Data Flow (1/3) - Qualtrics → Trigger
+
+- [**Qualtrics Interest Form**](https://cpp.pdx1.qualtrics.com/survey-builder/SV_6WpZLH4Mh2GDluS/edit?SurveyID=SV_6WpZLH4Mh2GDluS) (collect things like email, program interested in, how they heard about us, etc.).
+- When that form has a **new completion**, Qualtrics will **start a workflow**, sending data to the HubSpot database.  
+  [Open Qualtrics Workflow](https://cpp.pdx1.qualtrics.com/app/catalog/project-workflows?catalogContext=%7B%22state%22%3A%7B%22workflows%22%3A%7B%22workspaceId%22%3A%22SV_6WpZLH4Mh2GDluS%22%2C%22contextId%22%3A%22SV_6WpZLH4Mh2GDluS%22%2C%22workspaceType%22%3A%22survey%22%2C%22queryString%22%3A%22%253Fownership%3Dall%26workspaceId%3DSV_6WpZLH4Mh2GDluS%26workspaceType%3Dsurvey%22%7D%7D%2C%22surveyId%22%3A%22SV_6WpZLH4Mh2GDluS%22%7D&filters=%5B%7B%22groupId%22%3A%22CTG_wCF8IYOhsaqMyU1%22%2C%22tags%22%3A%5B%22CT_aA9aqbGWoLvWIxN%22%5D%7D%5D)
+
+## Data Flow (2/3) - Mapping
+
+- In that workflow, we will have **mapped the various survey fields** to columns in our **HubSpot database** (source, name, segment, etc.).
+- This ensures the contact is created/updated correctly in the HubSpot CRM.
+
+## Data Flow (3/3) - HubSpot Workflow & Email
+
+- Once added to the HubSpot CRM database, they will be **automatically sent a welcome email** based on what **segment** they belong to.
+- This process is a **HubSpot workflow**:  
+  [Open HubSpot Workflow](https://app.hubspot.com/workflows/8046753/view/default)
+- The workflow **sends an email we had previously created** specifically for the audience.
+
+
+## Email Analytics - KPIs to watch in Hubspot
+
+**Deliverability**
+
+- **Delivery rate** = delivered / sent
+- **Bounce rate** (hard vs. soft)
+- **Spam complaint rate**
+
+**Engagement**
+
+- **Unique click rate** (unique clicks / delivered) ← primary engagement KPI
+- **CTOR** (unique clicks / unique opens) — diagnostic only
+- **Reply rate** (if using a monitored inbox)
+
+**Outcome**
+
+- **Primary conversion rate** (form fills, registrations, purchases)
+- **Pipeline / revenue attribution** (if enabled)
+
+**List health**
+
+- **Unsubscribe rate**
+- **List growth & opt-in rate** (net new, consented contacts)
+
+::: callout-warning
+**Opens are noisy.** Due to privacy proxies and prefetching, **open rate** is directional at best. Track it for **trends**, but optimize and report against **clicks and conversions**.
+:::
+
+
+## Any Questions?
